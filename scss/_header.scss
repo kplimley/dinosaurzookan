@@ -1,0 +1,73 @@
+/* Nav menu */
+nav {
+  /* margin: 0 0 0.5em 0; */
+}
+nav ul {
+  width: 70%;
+  line-height: 1.5em;
+}
+nav a {
+  outline: 1px blue dashed;
+}
+
+#secondary-nav {
+  border: 1px dashed red; /*For dev purpose only */
+
+  display: block;
+  box-sizing: border-box;
+  height: 2em;
+
+}
+#secondary-nav ul {
+  display: inline;
+  list-style: none;
+  line-height: 2em; /* This centered the text vertically */
+  margin: 0;
+  padding: 0;
+  /* float: right; */
+}
+#secondary-nav a {
+  color: black;
+  display: block;
+  height: 2em;
+  float: right;
+  margin: 0 0.5em;
+}
+
+/* Language Switcher */
+#lang-switch {
+
+  height: 2em;
+  /* height: 4em; */
+  width: 20%;
+  /* padding: 0.3rem; */
+  position: absolute;
+  top: 0.3em;
+  right: 10vw;
+
+}
+#lang-switch ul {
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 0.25rem;
+
+  line-height: 2em; /* This centered the text vertically */
+
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+#lang-switch a {
+  color: black;
+  font-size: 1rem;
+  display: block;
+  /* padding: 0.3rem; */
+  text-align: center;
+
+  height: 2em;
+}
+/*
+#lang-select-en { font-family: Verdana; }   /* Verdana actually doesn't look good here
+#lang-select-ja { font-family: sans-serif; }
+*/

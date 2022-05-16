@@ -1,0 +1,52 @@
+
+/* Index page CSS Grid, for mobile or tablet */
+#dino-index {
+  width: 90vw;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 200px);
+  grid-gap: 1px;
+  gap: 1px;
+  margin: 0 auto 0 auto;
+  padding: 0;
+}
+/* Index page CSS Grid, for desktop */
+@media screen and (min-width: 1100px) {
+  #dino-index {
+    width: 70vw;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 200px);
+    grid-gap: 2px;
+    gap: 2px;
+    margin: 0 20vw 0 9vw;
+    padding: 0;
+  }
+}
+#dino-index li { background-color: pink; }
+
+/* Index page grid => Flexbox
+#dino-index {
+  width: 60vw;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto 0 auto;
+  padding: 0;
+}
+#dino-index li {
+  background-color: pink;
+  width: calc(25% - 10px);
+  flex: 0 0 auto;
+}
+*/
+
+@media screen and (min-width: 1000px) {
+  #attribution {
+    position: fixed;
+    width: 13vw;
+    right: 2vw;
+    top: 40vh;
+    margin-left: 1em;
+    font-style: italic;
+    font-weight: 100;
+    font-size: 0.9rem;
+  }
+}
