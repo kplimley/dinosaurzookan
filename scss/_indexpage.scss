@@ -1,3 +1,10 @@
+main {
+  margin: 0 2rem;
+}
+main h1 + p {
+  background-color: red;;
+  
+}
 
 /* Index page CSS Grid, for mobile or tablet */
 #dino-index {
@@ -9,16 +16,26 @@
   margin: 0 auto 0 auto;
   padding: 0;
 }
+#attribution {
+  font-style: italic;
+  font-weight: 100;
+  font-size: 0.9rem;
+}
+
 /* Index page CSS Grid, for desktop */
 @media screen and (min-width: 1100px) {
   #dino-index {
     width: 70vw;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 200px);
+    float: left;
     grid-gap: 2px;
     gap: 2px;
-    margin: 0 20vw 0 9vw;
-    padding: 0;
+    /* margin: 0 20vw 0 9vw; */
+    /* margin-right: 2rem; */
+  }
+  #attribution {
+    width: 20vw;
+    margin-left: 1rem;
+    float: left;
   }
 }
 #dino-index li { background-color: pink; }
@@ -38,6 +55,7 @@
 }
 */
 
+/* Original styles for attribution sidebar:
 @media screen and (min-width: 1000px) {
   #attribution {
     position: fixed;
@@ -50,3 +68,4 @@
     font-size: 0.9rem;
   }
 }
+*/
