@@ -63,7 +63,7 @@ function getAttribution(url) {
     default:
       return '<p><small>This is the default attribution text.</small></p>';
   }
-  imageAttribution = '<p><small>Image adapted from <a href="' + photoLink + '">"' + photoTitle + '"</a> by <a href="' + artistLink + '">' + artistName + '</a> licensed under <a href="' + licenseLink + '">' + licenseText + '</a></small></p>';
+  imageAttribution = '<p><small>Image adapted from "' + photoTitle + '" by ' + artistName + ' licensed under ' + licenseText + '</small></p>';
   return imageAttribution;
 }
 
