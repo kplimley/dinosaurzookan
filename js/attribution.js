@@ -22,42 +22,52 @@ let imageAttribution = "";
 let currentImage;
 const elAttribution = document.getElementById('attribution');
 
+const byNCsa = {
+  name: 'CC&nbsp;BY-NC-SA&nbsp;2.0',
+  url: 'https://creativecommons.org/licenses/by-nc-sa/2.0/'
+};
+const byNCnd = {
+  name: 'CC&nbsp;BY-NC-ND&nbsp;2.0',
+  url: 'https://creativecommons.org/licenses/by-nc-nd/2.0/'
+};
+
+
 // Gets the text to display in the attribution div element
 function getAttribution(url) {
-  let imageAttribution = '';
-  let photoLink = '';
-  let photoTitle = '';
-  let artistLink = '';
-  let licenseLink = '';
-  let licenseText = '';
+  let imageAttribution = '',
+      photoLink = '',
+      photoTitle = '',
+      artistLink = '',
+      artistName = '',
+      licenseLink = '',
+      licenseText = '';
   switch( url ) {
     case 'allosaurus.html': {
       photoLink = 'https://www.flickr.com/photos/7515797@N06/3868672514';
       photoTitle = 'Allosaurus';
       artistLink = 'https://www.flickr.com/photos/7515797@N06';
-      licenseLink = 'https://creativecommons.org/licenses/by-nc-nd/2.0/?ref=ccsearch&atype=html';
+      artistName = 'mulf';
+      licenseLink = 'https://creativecommons.org/licenses/by-nc-nd/2.0/';
       licenseText = 'CC&nbsp;BY-NC-ND&nbsp;2.0';
       break;
     }
-      
+    case 'edmontosaurus.html': {
+      photoLink = 'https://wordpress.org/openverse/image/acbad9fe-472e-4e34-a4a5-6714ffdad5cf/?referrer=creativecommons.org';
+      photoTitle = 'Edmontosaurus';
+      artistLink = 'https://www.flickr.com/photos/63052589@N00';
+      artistName = 'Dan Arndt';
+      licenseLink = byNCsa.url;
+      licenseText = byNCsa.name;
+      break;
+    }  
     default:
-      return 'This is the default attribution text.';
+      return '<p><small>This is the default attribution text.</small></p>';
   }
-  console.log(photoLink);
-  console.log(photoTitle);
-  console.log(artistLink);
-  console.log(licenseLink);
-  console.log(licenseText);
-  // Next line is broken:
-  imageAttribution = '<p><small>Image adapted from <a href="' + photoLink + '">"' + photoTitle + '"</a> by <a href="' + artistLink + '">mulf</a> licensed under <a href="' + licenseLink + '">' + licenseText + '</a></small></p>';
-  
-  // imageAttribution = '<p><small>Image adapted from <a href=" ';
+  imageAttribution = '<p><small>Image adapted from <a href="' + photoLink + '">"' + photoTitle + '"</a> by <a href="' + artistLink + '">' + artistName + '</a> licensed under <a href="' + licenseLink + '">' + licenseText + '</a></small></p>';
   return imageAttribution;
 }
 
 function showAttribution() {
-  // console.log('Full URL: ' + this.href );
-
   // Get the relative URL from the absolute URL
   let url = this.href;
   url = url.replace('file:///Users/sparrowhawk/Sync/GitHub/dinosaurzookan/', '');
@@ -68,7 +78,7 @@ function showAttribution() {
   */
 }
 function hideAttribution() {
-  elAttribution.innerHTML = 'Not hovering over a dino right now';
+  elAttribution.innerHTML = '';
 }
 // Hide the attribution text to start
 hideAttribution(); 
