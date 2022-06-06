@@ -30,6 +30,10 @@ const byNCnd = {
   name: 'CC&nbsp;BY-NC-ND&nbsp;2.0',
   url: 'https://creativecommons.org/licenses/by-nc-nd/2.0/'
 };
+const byNC = {
+  name: 'CC&nbsp;BY-NC&nbsp;2.0',
+  url: 'https://creativecommons.org/licenses/by-nc/2.0/'
+}
 
 
 // Gets the text to display in the attribution div element
@@ -60,6 +64,15 @@ function getAttribution(url) {
       licenseText = byNCsa.name;
       break;
     }  
+    case 'stegosaurus.html': {
+      photoLink = 'https://www.flickr.com/photos/95575701@N00/1344393606';
+      photoTitle = 'Stegosaurus';
+      artistLink = 'https://www.flickr.com/photos/95575701@N00';
+      artistName = 'fractalx';
+      licenseLink = byNC.url;
+      licenseText = byNC.name;
+      break;
+    }  
     default:
       return '<p><small>This is the default attribution text.</small></p>';
   }
@@ -69,8 +82,11 @@ function getAttribution(url) {
 
 function showAttribution() {
   // Get the relative URL from the absolute URL
+  // Instead of using replace(), what can I do?
   let url = this.href;
   url = url.replace('file:///Users/sparrowhawk/Sync/GitHub/dinosaurzookan/', '');
+  url = url.replace('http://127.0.0.1:3000/', '');
+  url = url.replace('file:///Volumes/32-GB%20Transcend%20USB/dinosaurzookan/', '');
   // console.log('Relative URL: ' + url );
   elAttribution.innerHTML = getAttribution(url);
   /*
@@ -102,3 +118,31 @@ let hrefString = dinoImages[0].href;
 if ( hrefString.search(pattern) )
   console.log('True');
 */
+
+const dinoData = {
+  allosaurus: {
+    "photoLink": "https://www.flickr.com/photos/7515797@N06/3868672514",
+    "photoTitle": "Allosaurus",
+    "artistLink": "https://www.flickr.com/photos/7515797@N06",
+    "artistName": "mulf",
+    "licenseLink": "https://creativecommons.org/licenses/by-nc-nd/2.0/",
+    "licenseText": "CC&nbsp,BY-NC-ND&nbsp,2.0"
+  },
+  edmontosaurus: {
+    "photoLink": "https://wordpress.org/openverse/image/acbad9fe-472e-4e34-a4a5-6714ffdad5cf/?referrer:creativecommons.org",
+    "photoTitle": "Edmontosaurus",
+    "artistLink": "https://www.flickr.com/photos/63052589@N00",
+    "artistName": "Dan Arndt",
+    "licenseLink": "https://creativecommons.org/licenses/by-nc-sa/2.0/",
+    "licenseText": "CC&nbsp;BY-NC-SA&nbsp;2.0"
+  },  
+  stegosaurus: {
+    "photoLink": "https://www.flickr.com/photos/95575701@N00/1344393606",
+    "photoTitle": "Stegosaurus",
+    "artistLink": "https://www.flickr.com/photos/95575701@N00",
+    "artistName": "fractalx",
+    "licenseLink": byNC.link,
+    "licenseText": byNC.name
+  }
+}
+console.log(`Stegosaurus license is ${dinoData.stegosaurus.licenseText}.`);
