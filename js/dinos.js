@@ -1,3 +1,22 @@
+"use strict"
+
+let thisPageDino = getPageDino();
+console.log(`thisPageDino variable is ${thisPageDino}`);
+
+function getPageDino() {
+  console.log('getPageDino() function invoked, our location is: ' + document.URL);
+  let url = document.URL; // document.URL is a string, apparently unlike window.location
+  url = url.split('/').pop().split('.').shift();
+  return url;
+}
+
+// Print window width (at time of loading) to footer (dev only)
+let winWidth = window.screen.width;
+let footOutput = `<i>Window width: '${winWidth}</i>`;
+let elFootOutput = document.getElementById('foot-output');
+elFootOutput.innerHTML = footOutput;
+
+
 // Declare global variables, including dinoData object.
 
 // License names and URLs
