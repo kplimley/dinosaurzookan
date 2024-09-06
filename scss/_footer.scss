@@ -11,8 +11,8 @@ footer {
                     90deg,
                     var(--light-color),
                     var(--primary-color) );
+  font-size: small;
 }
-
 
 /* Footer:
 footer {
@@ -23,3 +23,27 @@ footer {
   
 }
 */
+
+footer > ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  height: 8rem;
+}
+li.footer-menu {
+  border: 1px pink dashed;
+  float: left;
+}
+li.footer-menu li {
+  padding-left: 1.5rem;
+}
+li.footer-menu li:first-child {
+  padding-left: 0;
+}
+li.footer-menu a {
+  display: block;
+  padding: 0.3rem;
+}
+footer ul + small {
+  clear:both;
+}

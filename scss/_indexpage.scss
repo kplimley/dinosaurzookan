@@ -1,9 +1,8 @@
 main {
   margin: 0 2rem;
 }
-main h1 + p {
-  background-color: red;;
-  
+main h1 + p::first-letter {
+  font-size: 200%;
 }
 
 /* Index page CSS Grid, for mobile or tablet */
@@ -39,6 +38,10 @@ main h1 + p {
   }
 }
 #dino-index li { background-color: pink; }
+
+#dino-index > li a {
+  display:block;
+}
 
 /* Index page grid => Flexbox
 #dino-index {

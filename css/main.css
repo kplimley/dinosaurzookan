@@ -92,11 +92,13 @@ footer {
   display: block;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  clear: both;
   margin-top: 1em;
   padding: 1.2em;
   background-color: var(--header-background-color);
   background-image: -webkit-gradient(linear, left top, right top, from(var(--light-color)), to(var(--primary-color)));
   background-image: linear-gradient(90deg, var(--light-color), var(--primary-color));
+  font-size: small;
 }
 
 /* Footer:
@@ -108,6 +110,43 @@ footer {
   
 }
 */
+footer > ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  height: 8rem;
+}
+
+li.footer-menu {
+  border: 1px pink dashed;
+  float: left;
+}
+
+li.footer-menu li {
+  padding-left: 1.5rem;
+}
+
+li.footer-menu li:first-child {
+  padding-left: 0;
+}
+
+li.footer-menu a {
+  display: block;
+  padding: 0.3rem;
+}
+
+footer ul + small {
+  clear: both;
+}
+
+main {
+  margin: 0 2rem;
+}
+
+main h1 + p::first-letter {
+  font-size: 200%;
+}
+
 /* Index page CSS Grid, for mobile or tablet */
 #dino-index {
   width: 90vw;
@@ -121,23 +160,35 @@ footer {
   padding: 0;
 }
 
+#attribution {
+  font-style: italic;
+  font-weight: 100;
+  font-size: 0.9rem;
+}
+
 /* Index page CSS Grid, for desktop */
 @media screen and (min-width: 1100px) {
   #dino-index {
     width: 70vw;
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: (200px)[auto-fill];
-        grid-template-columns: repeat(auto-fill, 200px);
+    float: left;
     grid-gap: 2px;
     gap: 2px;
-    margin: 0 20vw 0 9vw;
-    padding: 0;
+    /* margin: 0 20vw 0 9vw; */
+    /* margin-right: 2rem; */
+  }
+  #attribution {
+    width: 20vw;
+    margin-left: 1rem;
+    float: left;
   }
 }
 
 #dino-index li {
   background-color: pink;
+}
+
+#dino-index > li a {
+  display: block;
 }
 
 /* Index page grid => Flexbox
@@ -154,6 +205,7 @@ footer {
   flex: 0 0 auto;
 }
 */
+/* Original styles for attribution sidebar:
 @media screen and (min-width: 1000px) {
   #attribution {
     position: fixed;
@@ -166,7 +218,7 @@ footer {
     font-size: 0.9rem;
   }
 }
-
+*/
 /* CSS custom variables */
 :root {
   /* Primary color for Dinosaur Data */
@@ -358,7 +410,7 @@ figcaption {
 
 /* Other styles: */
 main {
-  margin: 0 10vw;
+  /* margin: 0 10vw; */
 }
 
 p::-moz-selection {
